@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Store, Utensils, Fuel, Stethoscope, Home, Truck, Briefcase, Rocket, Building2 } from "lucide-react";
 import { CTASection } from "@/components/site/CTA";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/industries")({
   head: () => ({
@@ -29,7 +30,7 @@ const industries = [
 function IndustriesPage() {
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32 text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Industries</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold">Built for your industry</h1>
@@ -40,14 +41,16 @@ function IndustriesPage() {
       </section>
 
       <section className="container-x py-20 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-        {industries.map((i) => (
-          <div key={i.title} className="group rounded-2xl border border-border bg-card p-7 shadow-card hover:shadow-elegant hover:-translate-y-1 transition-all">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-hero text-white shadow-elegant">
-              <i.icon className="h-6 w-6" />
+        {industries.map((item, idx) => (
+          <Reveal key={item.title} delay={idx * 0.05}>
+            <div className="group card-hover h-full rounded-2xl border border-border bg-card p-7 shadow-card hover:shadow-elegant">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-hero text-white shadow-elegant icon-pop">
+                <item.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-xl font-semibold">{item.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{item.desc}</p>
             </div>
-            <h3 className="mt-5 text-xl font-semibold">{i.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{i.desc}</p>
-          </div>
+          </Reveal>
         ))}
       </section>
 

@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Code2, Search, Bot, Server, Wrench, Check } from "lucide-react";
 import { CTASection } from "@/components/site/CTA";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/services")({
   head: () => ({
@@ -50,7 +51,7 @@ const services = [
 function ServicesPage() {
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32 text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Our Services</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold">Everything you need to scale</h1>
@@ -62,25 +63,27 @@ function ServicesPage() {
 
       <section className="container-x py-20 space-y-8">
         {services.map((s, i) => (
-          <div key={s.title} className={`grid gap-8 md:grid-cols-5 items-center rounded-3xl border border-border bg-card p-8 md:p-12 shadow-card hover:shadow-elegant transition ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
+          <Reveal key={s.title} delay={i * 0.05}>
+            <div className={`group card-hover grid gap-8 md:grid-cols-5 items-center rounded-3xl border border-border bg-card p-8 md:p-12 shadow-card hover:shadow-elegant ${i % 2 ? "md:[&>div:first-child]:order-2" : ""}`}>
             <div className="md:col-span-2">
-              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-hero text-white shadow-elegant">
+              <div className="grid h-14 w-14 place-items-center rounded-2xl bg-hero text-white shadow-elegant icon-pop">
                 <s.icon className="h-7 w-7" />
               </div>
               <h2 className="mt-5 text-2xl md:text-3xl font-bold">{s.title}</h2>
               <p className="mt-3 text-sm font-semibold text-accent">{s.price}</p>
-              <Link to="/contact" className="mt-6 inline-flex items-center gap-2 rounded-md bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:opacity-90">
+              <Link to="/contact" className="btn-shine mt-6 inline-flex items-center gap-2 rounded-md bg-foreground text-background px-5 py-2.5 text-sm font-semibold hover:opacity-90 transition">
                 Get a Quote <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
             <ul className="md:col-span-3 grid sm:grid-cols-2 gap-3">
               {s.points.map((p) => (
                 <li key={p} className="flex items-start gap-2 rounded-lg bg-subtle p-3 text-sm">
-                  <Check className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" /> {p}
+                  <Check className="h-4 w-4 text-accent mt-0.5 flex-shrink-0" /><span>{p}</span>
                 </li>
               ))}
             </ul>
-          </div>
+            </div>
+          </Reveal>
         ))}
       </section>
 
