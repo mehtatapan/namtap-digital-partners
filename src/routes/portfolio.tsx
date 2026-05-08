@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { TrendingUp, Zap, Search } from "lucide-react";
 import { CTASection } from "@/components/site/CTA";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -58,21 +59,23 @@ function PortfolioPage() {
         </div>
 
         <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {visible.map((p) => (
-            <article key={p.title} className="group overflow-hidden rounded-2xl border border-border bg-card shadow-card hover:shadow-elegant transition-all hover:-translate-y-1">
-              <div className={`relative aspect-[16/10] bg-gradient-to-br ${p.grad} overflow-hidden`}>
-                <div className="absolute inset-0 opacity-30 mix-blend-overlay" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, white, transparent 50%)" }} />
-                <div className="absolute inset-0 grid place-items-center">
-                  <p.icon className="h-16 w-16 text-white/80 group-hover:scale-110 transition-transform" />
+          {visible.map((p, i) => (
+            <Reveal key={p.title} delay={i * 0.05}>
+              <article className="group card-hover h-full overflow-hidden rounded-2xl border border-border bg-card shadow-card hover:shadow-elegant">
+                <div className={`relative aspect-[16/10] bg-gradient-to-br ${p.grad} overflow-hidden`}>
+                  <div className="absolute inset-0 opacity-30 mix-blend-overlay" style={{ backgroundImage: "radial-gradient(circle at 30% 30%, white, transparent 50%)" }} />
+                  <div className="absolute inset-0 grid place-items-center">
+                    <p.icon className="h-16 w-16 text-white/80 transition-transform duration-500 group-hover:scale-110 group-hover:rotate-3" />
+                  </div>
+                  <span className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-white text-xs font-medium">{p.tag}</span>
                 </div>
-                <span className="absolute top-4 left-4 px-3 py-1 rounded-full glass text-white text-xs font-medium">{p.tag}</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-semibold">{p.title}</h3>
-                <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
-                <p className="mt-4 text-sm font-bold text-gradient">{p.metric}</p>
-              </div>
-            </article>
+                <div className="p-6">
+                  <h3 className="text-lg font-semibold">{p.title}</h3>
+                  <p className="mt-1 text-sm text-muted-foreground">{p.desc}</p>
+                  <p className="mt-4 text-sm font-bold text-gradient">{p.metric}</p>
+                </div>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
