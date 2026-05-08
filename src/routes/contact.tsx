@@ -82,10 +82,10 @@ function ContactPage() {
           <div className="rounded-2xl bg-hero text-white p-7 shadow-elegant">
             <h3 className="text-lg font-semibold">Contact details</h3>
             <ul className="mt-4 space-y-3 text-sm text-white/85">
-              <li className="flex items-center gap-3"><Mail className="h-4 w-4" /> hello@namtap.com</li>
-              <li className="flex items-center gap-3"><Phone className="h-4 w-4" /> +1 (555) 010-2024</li>
-              <li className="flex items-start gap-3"><MapPin className="h-4 w-4 mt-0.5" /> Toronto, ON, Canada</li>
-              <li className="flex items-start gap-3"><Clock className="h-4 w-4 mt-0.5" /> Mon – Fri · 9:00 AM – 6:00 PM EST</li>
+              <li className="flex items-center gap-3"><Mail className="h-4 w-4" /><span>hello@namtap.com</span></li>
+              <li className="flex items-center gap-3"><Phone className="h-4 w-4" /><span>+1 (555) 010-2024</span></li>
+              <li className="flex items-start gap-3"><MapPin className="h-4 w-4 mt-0.5" /><span>Toronto, ON, Canada</span></li>
+              <li className="flex items-start gap-3"><Clock className="h-4 w-4 mt-0.5" /><span>Mon – Fri · 9:00 AM – 6:00 PM EST</span></li>
             </ul>
             <div className="mt-5 flex gap-3">
               <a href="#" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-md glass hover:bg-white/20"><Linkedin className="h-4 w-4" /></a>
