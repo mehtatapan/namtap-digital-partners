@@ -5,6 +5,7 @@ import {
 } from "lucide-react";
 import heroImg from "@/assets/hero.jpg";
 import { CTASection } from "@/components/site/CTA";
+import { FAQ } from "@/components/site/FAQ";
 import { Reveal } from "@/components/site/Reveal";
 import { Counter } from "@/components/site/Counter";
 import { motion } from "framer-motion";
@@ -250,6 +251,7 @@ function Index() {
         </div>
       </section>
 
+      <FAQ />
       <CTASection />
     </>
   );
