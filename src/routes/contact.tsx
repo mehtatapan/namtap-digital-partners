@@ -18,7 +18,7 @@ function ContactPage() {
   const [submitted, setSubmitted] = useState(false);
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32 text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Contact</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold">Let's build what's next</h1>

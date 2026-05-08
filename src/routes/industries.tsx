@@ -29,7 +29,7 @@ const industries = [
 function IndustriesPage() {
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32 text-center">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Industries</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold">Built for your industry</h1>

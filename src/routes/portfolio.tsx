@@ -32,7 +32,7 @@ function PortfolioPage() {
 
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32">
           <p className="text-sm font-semibold uppercase tracking-wider text-accent">Portfolio</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-bold max-w-3xl">Selected work, measurable outcomes</h1>

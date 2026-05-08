@@ -26,7 +26,7 @@ const tech = ["React", "Next.js", "TypeScript", "Node.js", "Python", "PostgreSQL
 function AboutPage() {
   return (
     <>
-      <section className="bg-hero text-white">
+      <section className="relative overflow-hidden bg-hero-animated text-white">
         <div className="container-x py-24 md:py-32">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase tracking-wider text-accent">About Namtap</p>
