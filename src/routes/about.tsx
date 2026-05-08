@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Target, Eye, Heart, Cpu } from "lucide-react";
 import { CTASection } from "@/components/site/CTA";
+import { Reveal } from "@/components/site/Reveal";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -39,14 +40,16 @@ function AboutPage() {
       </section>
 
       <section className="container-x py-20 grid gap-6 md:grid-cols-2">
-        {values.map((v) => (
-          <div key={v.title} className="rounded-2xl border border-border bg-card p-8 shadow-card hover:shadow-elegant transition">
-            <div className="grid h-12 w-12 place-items-center rounded-xl bg-hero text-white shadow-elegant">
-              <v.icon className="h-6 w-6" />
+        {values.map((v, i) => (
+          <Reveal key={v.title} delay={i * 0.06}>
+            <div className="group card-hover h-full rounded-2xl border border-border bg-card p-8 shadow-card hover:shadow-elegant">
+              <div className="grid h-12 w-12 place-items-center rounded-xl bg-hero text-white shadow-elegant icon-pop">
+                <v.icon className="h-6 w-6" />
+              </div>
+              <h3 className="mt-5 text-xl font-semibold">{v.title}</h3>
+              <p className="mt-2 text-muted-foreground">{v.desc}</p>
             </div>
-            <h3 className="mt-5 text-xl font-semibold">{v.title}</h3>
-            <p className="mt-2 text-muted-foreground">{v.desc}</p>
-          </div>
+          </Reveal>
         ))}
       </section>
 
