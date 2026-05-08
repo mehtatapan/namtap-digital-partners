@@ -39,9 +39,9 @@ export function Footer() {
         <div>
           <h4 className="font-semibold mb-4 text-sm uppercase tracking-wider text-white/80">Contact</h4>
           <ul className="space-y-3 text-sm text-white/70">
-            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /> hello@namtap.com</li>
-            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /> +1 (555) 010-2024</li>
-            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5" /> Toronto, Canada</li>
+            <li className="flex items-center gap-2"><Mail className="h-4 w-4" /><span>hello@namtap.com</span></li>
+            <li className="flex items-center gap-2"><Phone className="h-4 w-4" /><span>+1 (555) 010-2024</span></li>
+            <li className="flex items-start gap-2"><MapPin className="h-4 w-4 mt-0.5" /><span>Toronto, Canada</span></li>
           </ul>
           <div className="mt-4 flex gap-3">
             <a href="#" aria-label="LinkedIn" className="grid h-9 w-9 place-items-center rounded-md glass hover:bg-white/20"><Linkedin className="h-4 w-4" /></a>
